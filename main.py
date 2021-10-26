@@ -13,6 +13,11 @@ class Item(BaseModel):
     tax: Optional[float] = None
 
 
+@app.post("/items/")
+async def create_item(item: Item):
+    return item
+
+
 @app.get("/")
 async def root():
     return {"message": "Wa Gwan Popcarn!"}
