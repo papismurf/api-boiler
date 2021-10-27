@@ -13,6 +13,10 @@ class Item(BaseModel):
     tax: Optional[float] = None
 
 
+@app.put("/items/{item_id}")
+async def create_item(item_id: int, item: Item):
+    return {"item_id": item_id, **item.dict()}
+
 @app.post("/items/")
 async def create_item(item: Item):
     item_dict = item.dict()
