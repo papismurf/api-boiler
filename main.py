@@ -36,7 +36,7 @@ async def read_item(item_id: int):
     return {"item_id": item_id}
 
 
-@app.get("/users/me")
+@app.get("/users/current_user")
 async def read_user_me():
     return {"user_id": "The current user"}
 
